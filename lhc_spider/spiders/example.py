@@ -11,14 +11,16 @@ class ExampleSpider(scrapy.Spider):
     start_urls = ['http://example.com/']
 
     def parse(self, response):
-        # 30m
+        # 30m-王中王
         yield Request(url='http://www.240303.com/bbs/2422.htm', callback=self.parse_30m, dont_filter=True)
-        # ws
+        # ws-周某人
         yield Request(url='http://www.zmr00.com/bbs/013.htm', callback=self.parse_ws, dont_filter=True)
-        # bs
+        # bs双波-东方红
         yield Request(url='http://www.672525.com/#kj50000', callback=self.parse_bs, dont_filter=True)
-        # sx
-        yield Request(url='http://www.801737.com/bbs/006.htm', callback=self.parse_sx, dont_filter=True)
+        # 七肖-美猴王论坛
+        # yield Request(url='http://www.801737.com/bbs/006.htm', callback=self.parse_sx, dont_filter=True)
+        # 七肖
+        yield Request(url='http://www.68496.com/bbs2/bbs/7肖.htm', callback=self.parse_7x, dont_filter=True)
 
     def parse_30m(self, response):
         all_tr = response.css('#table400915489 table tr')
@@ -85,8 +87,8 @@ class ExampleSpider(scrapy.Spider):
                 spi_item['type'] = '2'
                 yield spi_item
 
-    def parse_sx(self, response):
-        all_tr = response.css('#table11436 tr')
+    def parse_7x(self, response):
+        all_tr = response.css('table tr')
         for i, x in enumerate(all_tr):
             if i == 0:
                 continue

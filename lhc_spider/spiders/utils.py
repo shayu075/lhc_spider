@@ -51,10 +51,10 @@ def get_tuple_by_sx(_list):
     for i, x in enumerate(_list):
         c_tmp = x.strip()
         if c_tmp:
-            if '期:七肖中特' in c_tmp:
-                key = c_tmp.replace('期:七肖中特', '')
+            if '期:精准七肖中特' in c_tmp:
+                key = c_tmp.replace('期:精准七肖中特', '')
                 continue
-            if '实力证明,期期公开！' in c_tmp:
+            if '实力证明,期期公开' in c_tmp:
                 for xx in range(6, i):
                     c_tmp = _list[xx].strip().replace('【', '').replace('】', '')
                     for xxx in c_tmp:
@@ -101,9 +101,5 @@ def get_date_by_qs(qs):
 
 
 if __name__ == '__main__':
-    aa = ['\r\n\t\t\t\t\t\t\t', '\r\n\t\t\t\t\t', '美猴王论坛【', '七肖中特', '】已免费公开∝∝用心找，料才好.', '\r\n\t\t\t\t\t\t']
-    bb = ['\r\n\t\t\t\t\t\t\t', '\r\n\t\t\t\t\t\t\t', '\r\n\t\t\t\t\t\t\t', '\r\n\t\t\t\t\t\t\t135期:七肖中特', '\r\n\t\t\t\t\t\t\t', '\r\n\t\t\t\t\t\t\t', '【狗猪鸡', '猴', '羊马兔】', '实力证明,期期公开！', '\r\n\t\t\t\t\t\t\t', '\t', '\r\n\t\t\t\t\t\t\t', '特开:猴39准', '\r\n\t\t\t\t\t\t']
-    print(get_tuple_by_sx(aa))
-    print(get_tuple_by_sx(bb))
     pass
 
