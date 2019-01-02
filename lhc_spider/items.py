@@ -16,6 +16,5 @@ class LhcSpiderItem(scrapy.Item):
     day = scrapy.Field()
     cc = scrapy.Field()
     type = scrapy.Field()
-    sx_card = scrapy.Field()
 
 

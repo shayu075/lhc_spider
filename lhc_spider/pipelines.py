@@ -37,5 +37,8 @@ class LhcSpiderPipeline(object):
         INSERT INTO spiders_record(id, qs, year, month, day, cc, type, sx_card)
         VALUES (%s,%s,%s,%s,%s,%s,%s, '2018')
         '''
-        cursor.execute(insert_sql, (item['id'], item['qs'], item['year'], item['month'],
-                                    item['day'], item['cc'], item['type']))
+        try:
+            cursor.execute(insert_sql, (item['id'], item['qs'], item['year'], item['month'],
+                                        item['day'], item['cc'], item['type']))
+        except:
+            print('重复插入=>', item['id'])
