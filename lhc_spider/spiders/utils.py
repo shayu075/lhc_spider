@@ -62,6 +62,16 @@ def get_tuple_by_sx(_list):
     return (key, re)
 
 
+def get_tuple_by_3t(_list):
+    if _list[2] == '更新中':
+        return None
+    key = _list[0][:3]
+    re = list(_list[2].replace('-', ''))
+    if len(re) < 3:
+        return None
+    return (key, re)
+
+
 def get_date_by_qs(qs):
     results = None
     db = pymysql.connect("localhost", "root", "123456", "my_study")
