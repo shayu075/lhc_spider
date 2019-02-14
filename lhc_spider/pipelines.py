@@ -35,7 +35,7 @@ class LhcSpiderPipeline(object):
     def do_insert(self, cursor, item):
         insert_sql = '''
         INSERT INTO spiders_record(id, qs, year, month, day, cc, type, sx_card)
-        VALUES (%s,%s,%s,%s,%s,%s,%s, '2018')
+        VALUES (%s,%s,%s,%s,%s,%s,%s, '2019')
         '''
         try:
             cursor.execute(insert_sql, (item['id'], item['qs'], item['year'], item['month'],
